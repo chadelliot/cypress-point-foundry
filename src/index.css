@@ -121,6 +121,11 @@
   background: hsl(var(--deep-green) / 0.4);
   color: hsl(var(--foreground));
 }
+
+.bg-background {
+    background-color: #18106e;
+}
+
 section.py-20.lg\:py-32 {
     background: #fff;
 }
@@ -131,4 +136,8 @@ section.py-24.lg\:py-40 {
 
 section.py-20.lg\:py-32.bg-secondary\/50 {
     background: #eee;
+}
+
+.text-foreground {
+    color: #343439;
 }
