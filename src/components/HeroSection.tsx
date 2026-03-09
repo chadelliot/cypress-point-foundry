@@ -7,15 +7,19 @@ import heroBg from "@/assets/hero-bg.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center section-dark" aria-label="Hero">
-      {/* Background */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="Industrial warehouse facility"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroBg}
           className="w-full h-full object-cover opacity-30"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-hsl(var(--dark-section))/80 via-transparent to-hsl(var(--dark-section))/90" 
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0"
           style={{ background: 'linear-gradient(to bottom, hsla(220,20%,8%,0.7), transparent 40%, hsla(220,20%,8%,0.85))' }}
         />
       </div>
