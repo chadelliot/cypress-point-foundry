@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Brand */}
           <Link to="/" className="font-display text-xl font-bold tracking-tight">
-            <span className={scrolled ? "text-foreground" : "text-white"}>CYPRESS</span>
+            <span className={useLight ? "text-white" : "text-foreground"}>CYPRESS</span>
             <span className="text-primary"> POINT</span>
           </Link>
 
