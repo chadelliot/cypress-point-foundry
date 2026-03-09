@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTAFooter from "@/components/CTAFooter";
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 
 const facilities = [
   { market: "Charlotte Metro, NC", sf: "32,400 SF", use: "Building materials distribution", yard: "0.8-acre secured yard, IOS-capable", eave: "24' clear", status: "Stabilized" },
@@ -17,47 +18,51 @@ const Portfolio = () => {
       <Navbar />
       <main className="pt-20 lg:pt-28">
         <section className="py-16 lg:py-24">
-          <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-display block mb-3">Portfolio</span>
-              <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-medium tracking-[-0.03em] text-foreground mb-6 max-w-3xl">
-                Representative facilities
+          <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
+              <p className="font-display text-xs uppercase tracking-widest text-primary font-bold mb-4">Portfolio</p>
+              <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-tight text-foreground mb-6">
+                Representative Facilities
               </h1>
-              <p className="text-sm lg:text-[15px] text-muted-foreground leading-relaxed max-w-2xl mb-12">
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
                 A curated view of current and pipeline facilities across the Carolinas. Each property 
                 is evaluated for distributor-grade operational functionality.
               </p>
             </motion.div>
 
-            <div className="ruled-line mb-0" />
-            {facilities.map((f, i) => (
-              <motion.div
-                key={f.market}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                className="ruled-line py-6 lg:py-8 grid grid-cols-1 md:grid-cols-12 gap-4 items-start"
-              >
-                <div className="md:col-span-3">
-                  <span className="font-display text-base lg:text-lg font-medium text-foreground">{f.market}</span>
-                </div>
-                <div className="md:col-span-2">
-                  <span className="text-[10px] tracking-[0.15em] uppercase text-text-dim font-display block mb-0.5">Size / Eave</span>
-                  <span className="text-sm text-foreground">{f.sf} · {f.eave}</span>
-                </div>
-                <div className="md:col-span-3">
-                  <span className="text-[10px] tracking-[0.15em] uppercase text-text-dim font-display block mb-0.5">Use Case</span>
-                  <span className="text-sm text-foreground">{f.use}</span>
-                </div>
-                <div className="md:col-span-3">
-                  <span className="text-[10px] tracking-[0.15em] uppercase text-text-dim font-display block mb-0.5">Yard / IOS</span>
-                  <span className="text-sm text-foreground">{f.yard}</span>
-                </div>
-                <div className="md:col-span-1 flex justify-end">
-                  <span className="text-[10px] tracking-[0.1em] uppercase font-display text-deep-green">{f.status}</span>
-                </div>
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {facilities.map((f, i) => (
+                <motion.div
+                  key={f.market}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+                  className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:border-primary/30 transition-all"
+                >
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin size={16} className="text-primary" />
+                    <span className="font-display text-lg font-bold text-foreground">{f.market}</span>
+                  </div>
+                  <div className="space-y-3 mb-4">
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-display font-semibold">Size / Eave</span>
+                      <p className="text-sm text-foreground font-medium">{f.sf} · {f.eave}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-display font-semibold">Use Case</span>
+                      <p className="text-sm text-foreground font-medium">{f.use}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-display font-semibold">Yard / IOS</span>
+                      <p className="text-sm text-foreground font-medium">{f.yard}</p>
+                    </div>
+                  </div>
+                  <div className="pt-4 border-t border-border">
+                    <span className="text-xs uppercase tracking-wider font-display font-bold text-primary">{f.status}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
         <CTAFooter />
