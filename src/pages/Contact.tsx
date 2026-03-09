@@ -85,7 +85,7 @@ const Contact = () => {
                       placeholder="Tell us about your requirements"
                     />
                   </div>
-                  <Button variant="premium" size="lg" type="submit" className="mt-4">
+                  <Button size="lg" type="submit" className="mt-4 font-display text-sm tracking-wider uppercase font-bold">
                     Submit Inquiry
                   </Button>
                 </form>
