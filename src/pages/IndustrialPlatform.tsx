@@ -20,36 +20,32 @@ const IndustrialPlatform = () => {
       <Navbar />
       <main className="pt-20 lg:pt-28">
         <section className="py-16 lg:py-24">
-          <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-display block mb-3">Industrial Platform</span>
-              <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-medium tracking-[-0.03em] text-foreground mb-6 max-w-3xl">
-                Distributor-grade facilities built for operational throughput
+          <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
+              <p className="font-display text-xs uppercase tracking-widest text-primary font-bold mb-4">Industrial Platform</p>
+              <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-tight text-foreground mb-6 max-w-4xl mx-auto">
+                Distributor-Grade Facilities Built for Operational Throughput
               </h1>
-              <p className="text-sm lg:text-[15px] text-muted-foreground leading-relaxed max-w-2xl mb-12">
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
                 Cypress Point acquires and operates 15,000–50,000 SF industrial facilities across the Carolinas. 
-                Every building is evaluated against the functional requirements of distribution tenants — 
-                not financial engineering assumptions.
+                Every building is evaluated against the functional requirements of distribution tenants.
               </p>
             </motion.div>
 
-            <div className="ruled-line mb-0" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {specs.map((spec, i) => (
                 <motion.div
                   key={spec.label}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
-                  className="ruled-line py-5 lg:py-6 flex items-start gap-6"
+                  className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:border-primary/30 transition-all group"
                 >
-                  <span className="font-display text-[10px] tracking-[0.2em] uppercase text-text-dim w-4 flex-shrink-0 pt-0.5">
+                  <span className="font-display text-xs uppercase tracking-widest text-primary font-bold block mb-3">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div>
-                    <h3 className="font-display text-base font-medium text-foreground mb-1">{spec.label}</h3>
-                    <p className="text-sm text-muted-foreground">{spec.detail}</p>
-                  </div>
+                  <h3 className="font-display text-base font-bold uppercase tracking-tight text-foreground mb-2">{spec.label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{spec.detail}</p>
                 </motion.div>
               ))}
             </div>
