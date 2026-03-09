@@ -17,7 +17,7 @@ const FounderSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 lg:py-32 section-dark" ref={ref} aria-label="Founder">
+    <section className="py-20 lg:py-32 section-dark texture-diagonal-dark texture-noise relative" ref={ref} aria-label="Founder">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image / Video */}

@@ -8,7 +8,7 @@ const CTAFooter = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section className="py-24 lg:py-40 bg-primary" ref={ref} aria-label="Get in touch">
+    <section className="py-24 lg:py-40 bg-primary texture-noise relative" ref={ref} aria-label="Get in touch">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
