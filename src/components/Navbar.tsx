@@ -16,6 +16,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isHomepage = location.pathname === "/";
+  const useLight = !scrolled && isHomepage;
 
   useState(() => {
     const handler = () => setScrolled(window.scrollY > 50);
@@ -29,7 +31,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Brand */}
           <Link to="/" className="font-display text-xl font-bold tracking-tight">
-            <span className={scrolled ? "text-foreground" : "text-white"}>CYPRESS</span>
+            <span className={useLight ? "text-white" : "text-foreground"}>CYPRESS</span>
             <span className="text-primary"> POINT</span>
           </Link>
 
@@ -42,9 +44,9 @@ const Navbar = () => {
                 className={`font-display text-[13px] font-medium tracking-wide uppercase transition-colors duration-300 ${
                   location.pathname === link.to
                     ? "text-primary"
-                    : scrolled
-                    ? "text-foreground hover:text-primary"
-                    : "text-white/90 hover:text-white"
+                    : useLight
+                    ? "text-white/90 hover:text-white"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {link.label}
@@ -58,7 +60,7 @@ const Navbar = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
+            className={`lg:hidden p-2 ${useLight ? "text-white" : "text-foreground"}`}
             aria-label="Toggle menu"
           >
             {open ? <X size={24} /> : <Menu size={24} />}
