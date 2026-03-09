@@ -34,7 +34,7 @@ const WhySection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 lg:py-32 bg-secondary" ref={ref} aria-label="Why Cypress Point">
+    <section className="py-20 lg:py-32 bg-secondary texture-crosshatch texture-noise relative" ref={ref} aria-label="Why Cypress Point">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

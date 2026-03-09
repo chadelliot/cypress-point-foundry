@@ -17,7 +17,7 @@ const FacilitySpecs = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 lg:py-32 section-dark" ref={ref} aria-label="Facility specifications">
+    <section className="py-20 lg:py-32 section-dark texture-blueprint-dark texture-noise relative" ref={ref} aria-label="Facility specifications">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

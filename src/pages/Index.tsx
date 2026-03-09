@@ -13,6 +13,7 @@ import OfferingsSection from "@/components/OfferingsSection";
 import FounderSection from "@/components/FounderSection";
 import CTAFooter from "@/components/CTAFooter";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
   return (
@@ -20,17 +21,29 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <SectionDivider variant="grunge-top" dark />
         <StatsSection />
+        <SectionDivider variant="schematic" />
         <FocusSection />
+        <SectionDivider variant="torn-top" dark />
         <WhySection />
+        <SectionDivider variant="bolt-line" />
         <FacilitySpecs />
+        <SectionDivider variant="grunge-bottom" />
         <IndustryFocusSection />
+        <SectionDivider variant="torn-bottom" dark />
         <ProcessSection />
+        <SectionDivider variant="schematic" />
         <PortfolioPreview />
+        <SectionDivider variant="grunge-top" dark />
         <TestimonialsSection />
+        <SectionDivider variant="bolt-line" />
         <CarolinasMap />
+        <SectionDivider variant="torn-top" dark />
         <OfferingsSection />
+        <SectionDivider variant="grunge-top" dark />
         <FounderSection />
+        <SectionDivider variant="torn-bottom" />
         <CTAFooter />
       </main>
       <Footer />

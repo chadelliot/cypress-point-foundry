@@ -40,7 +40,7 @@ const StatsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 lg:py-28 bg-background border-t border-b border-border" ref={ref} aria-label="Statistics">
+    <section className="py-20 lg:py-28 bg-background texture-grid texture-schematic-corner relative" ref={ref} aria-label="Statistics">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, i) => (

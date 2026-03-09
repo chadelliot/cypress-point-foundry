@@ -32,7 +32,7 @@ const OfferingsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 lg:py-32 bg-background" ref={ref} aria-label="Offerings">
+    <section className="py-20 lg:py-32 bg-background texture-grid texture-schematic-corner relative" ref={ref} aria-label="Offerings">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
