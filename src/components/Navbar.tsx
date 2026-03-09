@@ -44,9 +44,9 @@ const Navbar = () => {
                 className={`font-display text-[13px] font-medium tracking-wide uppercase transition-colors duration-300 ${
                   location.pathname === link.to
                     ? "text-primary"
-                    : scrolled
-                    ? "text-foreground hover:text-primary"
-                    : "text-white/90 hover:text-white"
+                    : useLight
+                    ? "text-white/90 hover:text-white"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {link.label}
