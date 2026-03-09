@@ -4,53 +4,45 @@
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 40 20% 92%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 40 20% 92%;
+    --card: 0 0% 98%;
+    --card-foreground: 220 20% 10%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 40 20% 92%;
-    --primary-foreground: 0 0% 7%;
+    --primary: 145 100% 32%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 40 20% 92%;
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 20% 10%;
 
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 8% 46%;
 
-    --accent: 140 18% 28%;
-    --accent-foreground: 40 20% 92%;
+    --accent: 145 100% 32%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 140 18% 28%;
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 145 100% 32%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 40 20% 92%;
-    --sidebar-primary: 140 18% 28%;
-    --sidebar-primary-foreground: 40 20% 92%;
-    --sidebar-accent: 0 0% 14%;
-    --sidebar-accent-foreground: 40 20% 92%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 140 18% 28%;
+    /* Hero dark section */
+    --hero-bg: 220 20% 8%;
+    --hero-fg: 0 0% 100%;
 
     /* Custom tokens */
-    --warm-white: 40 20% 92%;
-    --charcoal: 0 0% 12%;
-    --charcoal-light: 0 0% 16%;
-    --deep-green: 140 18% 28%;
-    --deep-green-light: 140 18% 36%;
-    --ruled-line: 0 0% 20%;
-    --text-dim: 0 0% 45%;
+    --green-accent: 145 100% 32%;
+    --green-accent-light: 145 80% 42%;
+    --dark-section: 220 20% 8%;
+    --dark-section-fg: 0 0% 95%;
   }
 }
 
@@ -80,21 +72,17 @@
     font-family: 'DM Sans', sans-serif;
   }
 
-  .ruled-line {
-    @apply border-t;
-    border-color: hsl(var(--ruled-line));
-  }
-
-  .text-dim {
-    color: hsl(var(--text-dim));
+  .section-dark {
+    background-color: hsl(var(--dark-section));
+    color: hsl(var(--dark-section-fg));
   }
 
   .gradient-fade-up {
-    background: linear-gradient(to top, hsl(var(--background)), transparent);
+    background: linear-gradient(to top, hsl(var(--dark-section)), transparent);
   }
 
   .gradient-fade-down {
-    background: linear-gradient(to bottom, hsl(var(--background)), transparent);
+    background: linear-gradient(to bottom, hsl(var(--dark-section)), transparent);
   }
 }
 
@@ -118,26 +106,6 @@
 
 /* Selection */
 ::selection {
-  background: hsl(var(--deep-green) / 0.4);
+  background: hsl(var(--primary) / 0.3);
   color: hsl(var(--foreground));
-}
-
-.bg-background {
-    background-color: #18106e;
-}
-
-section.py-20.lg\:py-32 {
-    background: #fff;
-}
-
-section.py-24.lg\:py-40 {
-    background: #0a123c;
-}
-
-section.py-20.lg\:py-32.bg-secondary\/50 {
-    background: #eee;
-}
-
-.text-foreground {
-    color: #343439;
 }
