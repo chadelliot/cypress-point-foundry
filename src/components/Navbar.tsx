@@ -16,6 +16,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isHomepage = location.pathname === "/";
+  const useLight = !scrolled && isHomepage;
 
   useState(() => {
     const handler = () => setScrolled(window.scrollY > 50);
