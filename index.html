@@ -1,37 +1,557 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cypress Point — Industrial Real Estate for Distributor-Grade Operators</title>
-    <meta name="description" content="Cypress Point acquires and operates 15,000–50,000 SF distributor-grade industrial facilities across the Carolinas. Operator-informed real estate." />
-    <meta name="author" content="Cypress Point" />
-    <link rel="canonical" href="https://cypresspoint.com" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cypress Point — Industrial Development Advisory</title>
+<meta name="description" content="A development partner for industrial distributors expanding into new markets. Site selection, acquisition, and build-to-suit advisory across the Southeast U.S.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-    <meta property="og:title" content="Cypress Point — Industrial Real Estate" />
-    <meta property="og:description" content="Operator-informed industrial real estate for distributor-grade tenants across the Carolinas." />
-    <meta property="og:type" content="website" />
+<!-- ── SVG DEFS ── -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="ct" viewBox="0 0 120 280">
+      <path d="M60 270 L60 210" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M60 250 C60 250 40 240 35 225 C30 210 45 205 55 215 C50 200 38 195 36 180 C34 165 50 158 58 170 C53 155 40 148 40 132 C40 116 56 110 60 122 C64 110 80 116 80 132 C80 148 67 155 62 170 C70 158 86 165 84 180 C82 195 70 200 65 215 C75 205 90 210 85 225 C80 240 60 250 60 250Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
 
-    <meta name="twitter:card" content="summary_large_image" />
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <a class="nav-logo" onclick="showPage('home')">
+    <svg width="15" height="28" viewBox="0 0 120 280" fill="white" opacity="0.85"><use href="#ct"/></svg>
+    Cypress Point
+  </a>
+  <ul class="nav-links">
+    <li><a id="nav-home" class="active" onclick="showPage('home')">Home</a></li>
+    <li><a id="nav-company" onclick="showPage('company')">Our Company</a></li>
+    <li><a id="nav-development" onclick="showPage('development')">Commercial Development</a></li>
+    <li><a id="nav-contact" onclick="showPage('contact')">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-phone">(000) 000-0000</span>
+    <button class="nav-cta" onclick="showPage('contact')">Get in Touch</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<!-- Mobile Drawer -->
+<nav class="nav-drawer" id="nav-drawer">
+  <a onclick="showPage('home');closeMenu()">Home</a>
+  <a onclick="showPage('company');closeMenu()">Our Company</a>
+  <a onclick="showPage('development');closeMenu()">Commercial Development</a>
+  <a onclick="showPage('contact');closeMenu()">Contact</a>
+  <button class="drawer-cta btn" onclick="showPage('contact');closeMenu()">Get in Touch →</button>
+</nav>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "name": "Cypress Point",
-      "description": "Industrial real estate platform focused on distributor-grade facilities in the Carolinas",
-      "areaServed": ["North Carolina", "South Carolina"],
-      "founder": { "@type": "Person", "name": "Munroe Best" }
-    }
-    </script>
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!-- ═══════════════════════════════════════════
+     HOME
+═══════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="tag">Industrial Real Estate Advisory</div>
+      <h1 class="hero-headline">
+        Find it.<br>Buy it.<br><em>Build it.</em>
+      </h1>
+      <p class="hero-sub">A development partner for industrial distributors expanding into new markets. One partner. The full cycle.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-green btn-arrow" onclick="showPage('contact')">Start a Conversation</button>
+        <button class="btn btn-outline-w btn-arrow" onclick="showPage('development')">How it works</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="hero-scroll-line"></span>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-dot"></span>Industrial Outdoor Storage</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>15,000 – 50,000 SF</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Site Selection</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Build-to-Suit</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Leaseback Solutions</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Southeast U.S.</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Distributor-Grade Facilities</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>30 Years Operator Experience</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Industrial Outdoor Storage</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>15,000 – 50,000 SF</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Site Selection</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Build-to-Suit</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Leaseback Solutions</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Southeast U.S.</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Distributor-Grade Facilities</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>30 Years Operator Experience</span>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="manifesto-left">
+      <div class="manifesto-left-bg"></div>
+      <div class="manifesto-left-inner">
+        <div class="tag">The Problem</div>
+        <blockquote class="manifesto-quote">
+          Most distributors expanding into new markets have to <em>assemble a team that doesn't talk to each other.</em>
+        </blockquote>
+        <p class="manifesto-attr">— What Cypress Point solves</p>
+      </div>
+    </div>
+    <div class="manifesto-right">
+      <div class="tag dark">What We Do</div>
+      <p class="manifesto-intro">Cypress Point closes that gap — a single advisory practice covering the full lifecycle from market identification to facility occupancy.</p>
+      <div class="manifesto-cards">
+        <div class="mcard">
+          <div class="mcard-num">01 / Find It</div>
+          <div class="mcard-title">The right market first.</div>
+          <div class="mcard-body">Market demand analysis, site identification, and competitive landscape review grounded in distributor-specific criteria — not whatever happens to be available.</div>
+        </div>
+        <div class="mcard">
+          <div class="mcard-num">02 / Buy It</div>
+          <div class="mcard-title">Acquisition done right.</div>
+          <div class="mcard-body">Offer structuring, due diligence, and closing coordination. We also acquire sale-only properties and lease them back — so distributors preserve capital for inventory, technology, and growth.</div>
+        </div>
+        <div class="mcard">
+          <div class="mcard-num">03 / Build It</div>
+          <div class="mcard-title">Built for your operation.</div>
+          <div class="mcard-body">Development advisory from ground-break through occupancy. Dock ratios, clear heights, yard space — facilities specified the way distributors actually need them.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-cell"><div class="stat-num">30<span>+</span></div><div class="stat-label">Years in Industrial Distribution</div></div>
+    <div class="stat-cell"><div class="stat-num">15–50<span>K SF</span></div><div class="stat-label">Target Facility Range</div></div>
+    <div class="stat-cell"><div class="stat-num">SE<span></span></div><div class="stat-label">Southeast U.S. Focus</div></div>
+    <div class="stat-cell"><div class="stat-num">1<span></span></div><div class="stat-label">Focused Principal</div></div>
+  </div>
+
+  <!-- WHO WE SERVE -->
+  <section class="niche">
+    <div class="niche-bg"></div>
+    <div class="niche-inner">
+      <div class="tag">Who We Serve</div>
+      <h2 class="niche-title">Built for industrial distributors <em>expanding into new territory.</em></h2>
+      <p class="niche-body">If you're in the industrial distribution space and responsible for real estate, you should have a relationship with Cypress Point. We understand why you prefer to lease. We know what your operation needs. And we move faster than any generalist.</p>
+      <div class="niche-tags">
+        <span class="niche-tag">HVAC &amp; Mechanical</span>
+        <span class="niche-tag">Electrical Supplies</span>
+        <span class="niche-tag">Plumbing &amp; Waterworks</span>
+        <span class="niche-tag">Building Materials</span>
+        <span class="niche-tag">Fasteners &amp; Hardware</span>
+        <span class="niche-tag">Safety Equipment</span>
+        <span class="niche-tag">MRO Distributors</span>
+        <span class="niche-tag">Janitorial Supply</span>
+        <span class="niche-tag">Tool &amp; Equipment</span>
+        <span class="niche-tag">Food Service</span>
+      </div>
+      <button class="btn btn-green btn-arrow" onclick="showPage('contact')">Discuss Your Expansion</button>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="markets">
+    <div class="markets-inner">
+      <div class="markets-intro">
+        <div class="tag dark">Territory</div>
+        <h2>Deep roots in the <em>right markets.</em></h2>
+        <p>Cypress Point operates where industrial distribution is growing — not just where we happen to have a license. Every market we work in is one we know from the ground up.</p>
+        <button class="btn btn-outline-d btn-arrow" onclick="showPage('contact')">Discuss your market</button>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--forest-light);margin-bottom:8px">Active Markets</div>
+        <div class="market-table">
+          <div class="mrow"><span class="mrow-idx">01</span><span class="mrow-name">North Carolina</span><span class="mrow-type primary">Primary</span></div>
+          <div class="mrow"><span class="mrow-idx">02</span><span class="mrow-name">South Carolina</span><span class="mrow-type primary">Primary</span></div>
+          <div class="mrow"><span class="mrow-idx">03</span><span class="mrow-name">Virginia</span><span class="mrow-type primary">Primary</span></div>
+          <div class="mrow"><span class="mrow-idx">04</span><span class="mrow-name">Georgia</span><span class="mrow-type primary">Primary</span></div>
+          <div class="mrow"><span class="mrow-idx">05</span><span class="mrow-name">Tennessee</span><span class="mrow-type primary">Primary</span></div>
+          <div class="mrow"><span class="mrow-idx">06</span><span class="mrow-name">Ohio</span><span class="mrow-type extended">Extended</span></div>
+          <div class="mrow"><span class="mrow-idx">07</span><span class="mrow-name">Indiana</span><span class="mrow-type extended">Extended</span></div>
+          <div class="mrow"><span class="mrow-idx">08</span><span class="mrow-name">Kentucky</span><span class="mrow-type extended">Extended</span></div>
+          <div class="mrow"><span class="mrow-idx">09</span><span class="mrow-name">Pennsylvania</span><span class="mrow-type extended">Extended</span></div>
+          <div class="mrow"><span class="mrow-idx">10</span><span class="mrow-name">Maryland</span><span class="mrow-type extended">Extended</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-band-text">Ready to expand into<br><em>a new market?</em></div>
+    <div class="cta-band-btns">
+      <button class="btn btn-outline-d btn-arrow" onclick="showPage('company')">About Munroe</button>
+      <button class="btn btn-green btn-arrow" onclick="showPage('contact')">Start a Conversation</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand"><svg width="13" height="24" viewBox="0 0 120 280" fill="white" opacity="0.7"><use href="#ct"/></svg>Cypress Point</div>
+        <div class="footer-tagline">Find it. Buy it. Build it.</div>
+        <p class="footer-note">Industrial real estate development advisory for distributors expanding into new markets. Based in the Southeast, active across the Mid-Atlantic and Midwest.</p>
+      </div>
+      <div>
+        <div class="footer-col-head">Navigate</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('company')">Our Company</a></li>
+          <li><a onclick="showPage('development')">Commercial Development</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-head">Services</div>
+        <ul class="footer-links">
+          <li><a>Site Selection</a></li>
+          <li><a>Land Acquisition</a></li>
+          <li><a>Development Advisory</a></li>
+          <li><a>Leaseback Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-head">Contact</div>
+        <ul class="footer-links">
+          <li><a>Munroe Best</a></li>
+          <li><a>Principal</a></li>
+          <li><a>munroe@cypresspoint.com</a></li>
+          <li><a>(000) 000-0000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Cypress Point</span>
+      <span class="footer-copy">Industrial Real Estate Development Advisory</span>
+    </div>
+  </footer>
+
+</div><!-- /home -->
+
+
+<!-- ═══════════════════════════════════════════
+     OUR COMPANY
+═══════════════════════════════════════════ -->
+<div id="page-company" class="page">
+
+  <section class="inner-hero">
+    <div class="inner-hero-bg" style="background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80') center 40%/cover no-repeat"></div>
+    <div class="inner-hero-inner">
+      <div class="tag">Our Company</div>
+      <h1 class="inner-hero-title">One principal.<br><em>One focus.</em></h1>
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio">
+    <div class="bio-visual">
+      <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80') center top/cover no-repeat;opacity:0.45;mix-blend-mode:luminosity"></div>
+      <div class="bio-visual-overlay"></div>
+      <div class="bio-name-block">
+        <div class="bio-name">Munroe Best</div>
+        <div class="bio-subtitle">Principal · Cypress Point</div>
+      </div>
+    </div>
+    <div class="bio-content">
+      <div class="tag dark">About Munroe</div>
+      <blockquote class="bio-quote">"Industrial distributors deserve a partner who understands their operation — not just their square footage."</blockquote>
+      <p class="bio-body">Munroe has spent 30 years working at the intersection of industrial real estate and distribution operations. Before founding Cypress Point, he led the southern division of one of the nation's largest building materials distributors — managing hundreds of branch locations across multiple states, navigating every variation of industrial facility the market had to offer.</p>
+      <p class="bio-body">That experience made one thing clear: distributors expanding into new markets are chronically underserved by generalist brokers who don't understand the specific requirements of distribution facilities. Cypress Point was founded to close that gap.</p>
+      <div class="cred-row">
+        <div class="cred"><div class="cred-label">Focus</div><div class="cred-value">Industrial Distribution Facilities</div></div>
+        <div class="cred"><div class="cred-label">Experience</div><div class="cred-value">30+ Years</div></div>
+        <div class="cred"><div class="cred-label">Territory</div><div class="cred-value">SE · Mid-Atlantic · Midwest</div></div>
+        <div class="cred"><div class="cred-label">Model</div><div class="cred-value">Advisory-Only, No Conflicts</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE CALLOUT -->
+  <section class="img-callout" style="min-height:44vh">
+    <div class="img-callout-bg" style="background:url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1400&q=80') center 60%/cover no-repeat"></div>
+    <div class="img-callout-inner">
+      <p class="img-callout-text">"If you are in industrial distribution and responsible for real estate, you should have a relationship with Cypress Point."</p>
+      <p class="img-callout-attr">— Munroe Best, Principal</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="why-inner">
+      <div class="why-header">
+        <div class="tag dark">The Difference</div>
+        <h2 class="why-big">Not a broker.<br><em>A development partner.</em></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">◈</div>
+          <h3 class="why-title">Specialized knowledge</h3>
+          <p class="why-body">Cypress Point works only with industrial distributors. That specialization means faster site qualification, fewer false starts, and better outcomes than any generalist could deliver.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">◉</div>
+          <h3 class="why-title">Aligned incentives</h3>
+          <p class="why-body">Advisory fees are structured around project outcomes — not transaction volume. The right deal for the client is always the right deal for Cypress Point.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">◇</div>
+          <h3 class="why-title">Senior access, always</h3>
+          <p class="why-body">Every client works directly with Munroe — not an associate. The principal is in the room for every market review, site tour, and negotiation session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="cta-band-text">Work with Munroe<br><em>directly.</em></div>
+    <div class="cta-band-btns">
+      <button class="btn btn-green btn-arrow" onclick="showPage('contact')">Get in Touch</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div><div class="footer-brand"><svg width="13" height="24" viewBox="0 0 120 280" fill="white" opacity="0.7"><use href="#ct"/></svg>Cypress Point</div><div class="footer-tagline">Find it. Buy it. Build it.</div><p class="footer-note">Industrial real estate development advisory for distributors expanding into new markets.</p></div>
+      <div><div class="footer-col-head">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('company')">Our Company</a></li><li><a onclick="showPage('development')">Commercial Development</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div><div class="footer-col-head">Contact</div><ul class="footer-links"><li><a>Munroe Best</a></li><li><a>munroe@cypresspoint.com</a></li><li><a>(000) 000-0000</a></li></ul></div>
+      <div></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© 2025 Cypress Point</span><span class="footer-copy">Industrial Real Estate Development Advisory</span></div>
+  </footer>
+
+</div><!-- /company -->
+
+
+<!-- ═══════════════════════════════════════════
+     COMMERCIAL DEVELOPMENT
+═══════════════════════════════════════════ -->
+<div id="page-development" class="page">
+
+  <section class="inner-hero">
+    <div class="inner-hero-bg" style="background:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=80') center/cover no-repeat"></div>
+    <div class="inner-hero-inner">
+      <div class="tag">Commercial Development</div>
+      <h1 class="inner-hero-title">Industrial facilities built for<br><em>how distributors work.</em></h1>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="process-top">
+      <div class="process-top-visual"></div>
+      <div class="process-top-content">
+        <div class="tag">The Process</div>
+        <h2 class="process-title">Find it.<br>Buy it.<br><em>Build it.</em></h2>
+        <p class="process-desc">Three phases. One partner. A clear line from market decision to operational facility — with the same advisor present at every stage. Nothing gets lost between phases.</p>
+      </div>
+    </div>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pstep-bg-num">01</div>
+        <div class="pstep-verb">Find</div>
+        <div class="pstep-phase">Phase 01 — Market &amp; Site Selection</div>
+        <div class="pstep-title">The right market before the right property.</div>
+        <p class="pstep-body">Most distributors start with available properties. We start by evaluating whether the market is right for your operation.</p>
+        <ul class="pstep-list">
+          <li>Market demand analysis</li>
+          <li>Customer proximity mapping</li>
+          <li>Competitive landscape review</li>
+          <li>Site identification &amp; screening</li>
+          <li>Infrastructure evaluation</li>
+          <li>Labor market assessment</li>
+        </ul>
+      </div>
+      <div class="pstep">
+        <div class="pstep-bg-num">02</div>
+        <div class="pstep-verb">Buy</div>
+        <div class="pstep-phase">Phase 02 — Acquisition &amp; Transaction</div>
+        <div class="pstep-title">Your interests. Not the seller's.</div>
+        <p class="pstep-body">We also acquire sale-only properties and structure leasebacks — so distributors get the facility without tying up capital.</p>
+        <ul class="pstep-list">
+          <li>Acquisition strategy</li>
+          <li>Offer structuring &amp; negotiation</li>
+          <li>Environmental due diligence</li>
+          <li>Title &amp; survey coordination</li>
+          <li>Zoning &amp; entitlement review</li>
+          <li>Closing coordination</li>
+        </ul>
+      </div>
+      <div class="pstep">
+        <div class="pstep-bg-num">03</div>
+        <div class="pstep-verb">Build</div>
+        <div class="pstep-phase">Phase 03 — Development Advisory</div>
+        <div class="pstep-title">A facility that fits from day one.</div>
+        <p class="pstep-body">Facilities specified for how your operation actually runs — dock ratios, clear heights, yard space, eave heights, column spacing.</p>
+        <ul class="pstep-list">
+          <li>Facility programming &amp; spec</li>
+          <li>Architect &amp; GC selection</li>
+          <li>Design review &amp; value engineering</li>
+          <li>Permitting coordination</li>
+          <li>Construction oversight</li>
+          <li>Occupancy transition</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEV PRINCIPLES -->
+  <section class="dev-principles">
+    <div class="dev-principles-inner">
+      <div class="dev-header">
+        <div class="tag dark">Why It Works</div>
+        <h2 class="dev-big">The advantages of a single <em>integrated partner.</em></h2>
+      </div>
+      <div class="principle-grid">
+        <div class="principle-card">
+          <div class="principle-icon">∅</div>
+          <h3 class="principle-title">No handoffs between advisors</h3>
+          <p class="principle-body">When the same advisor who evaluated the market also negotiated the land and is now overseeing construction, nothing gets lost between phases. Your project doesn't restart.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-icon">⊕</div>
+          <h3 class="principle-title">Distributor operations expertise</h3>
+          <p class="principle-body">We've worked inside distribution operations, not just around them. We specify facilities correctly without requiring the client to educate us from scratch.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-icon">◎</div>
+          <h3 class="principle-title">Accountability at every stage</h3>
+          <p class="principle-body">There is one name on the engagement. Every deliverable, every recommendation, every site visit — directly from the principal. No junior team managing your expansion in the background.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-icon">⌖</div>
+          <h3 class="principle-title">Market intelligence that compounds</h3>
+          <p class="principle-body">Every project adds to a working knowledge of market conditions, site availability, and development costs. Clients benefit from pattern recognition built over decades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE CALLOUT -->
+  <section class="img-callout" style="min-height:42vh">
+    <div class="img-callout-bg" style="background:url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1400&q=80') center 60%/cover no-repeat"></div>
+    <div class="img-callout-inner">
+      <p class="img-callout-text">"The 15–50K SF range is too big for most people to build and too small for institutional capital. That's the niche."</p>
+      <p class="img-callout-attr">— Munroe Best on Industrial Outdoor Storage</p>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="cta-band-text">Expanding into<br><em>a new market?</em></div>
+    <div class="cta-band-btns">
+      <button class="btn btn-green btn-arrow" onclick="showPage('contact')">Start a Conversation</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div><div class="footer-brand"><svg width="13" height="24" viewBox="0 0 120 280" fill="white" opacity="0.7"><use href="#ct"/></svg>Cypress Point</div><div class="footer-tagline">Find it. Buy it. Build it.</div><p class="footer-note">Industrial real estate development advisory for distributors expanding into new markets.</p></div>
+      <div><div class="footer-col-head">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('company')">Our Company</a></li><li><a onclick="showPage('development')">Commercial Development</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div><div class="footer-col-head">Contact</div><ul class="footer-links"><li><a>Munroe Best</a></li><li><a>munroe@cypresspoint.com</a></li><li><a>(000) 000-0000</a></li></ul></div>
+      <div></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© 2025 Cypress Point</span></div>
+  </footer>
+
+</div><!-- /development -->
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div style="padding-top:var(--nav-h)">
+
+    <section class="contact-hero">
+      <div class="contact-hero-bg"></div>
+      <div class="contact-hero-overlay"></div>
+      <div class="tag center">Let's Talk</div>
+      <h1 class="contact-big">Let's talk about<br><em>your next market.</em></h1>
+      <p class="contact-sub">Cypress Point works with a small number of clients at any given time. If you're an industrial distributor considering a new market, reach out.</p>
+      <div class="contact-ctas">
+        <a href="tel:0000000000" class="btn btn-green">Call Munroe Directly</a>
+        <button class="btn btn-outline-w" onclick="document.getElementById('cform').scrollIntoView({behavior:'smooth'})">Send a Message ↓</button>
+      </div>
+    </section>
+
+    <div class="contact-body-wrap">
+      <div class="contact-body" id="cform">
+        <div>
+          <h2 class="contact-info-label">Reach Munroe <em>directly.</em></h2>
+          <p class="contact-info-body">Every engagement starts with a direct conversation. Tell us about your distribution operation and the market you're targeting. We'll tell you honestly whether there's a fit.</p>
+          <div class="contact-detail">
+            <div class="citem"><span class="ci-label">Principal</span><span class="ci-value">Munroe Best</span></div>
+            <div class="citem"><span class="ci-label">Phone</span><span class="ci-value">(000) 000-0000</span></div>
+            <div class="citem"><span class="ci-label">Email</span><span class="ci-value">munroe@cypresspoint.com</span></div>
+            <div class="citem"><span class="ci-label">Territory</span><span class="ci-value">Southeast · Mid-Atlantic · Midwest</span></div>
+          </div>
+          <div class="contact-blockquote">
+            <p>"Every engagement starts with the same question: what does your operation need — not what does the market have available."</p>
+            <cite>— Munroe, Principal</cite>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <div class="form-head">Send a Message</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="John" autocomplete="given-name"></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith" autocomplete="family-name"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Company</label><input class="form-input" type="text" placeholder="Distribution Co." autocomplete="organization"></div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="john@company.com" autocomplete="email"></div>
+            <div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" placeholder="(000) 000-0000" autocomplete="tel"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Target Market / Geography</label><input class="form-input" type="text" placeholder="e.g. Charlotte, NC area"></div>
+          <div class="form-group">
+            <label class="form-label">Area of Interest</label>
+            <select class="form-select">
+              <option value="">Select one...</option>
+              <option>Site Selection / Market Analysis</option>
+              <option>Land or Building Acquisition</option>
+              <option>Ground-Up Development</option>
+              <option>Leaseback / Sale-Leaseback Structure</option>
+              <option>Full-Cycle Advisory (Find → Buy → Build)</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Tell us about your project</label><textarea class="form-textarea" placeholder="Briefly describe your distribution operation, the market you're targeting, and your timeline..."></textarea></div>
+          <button class="form-submit" onclick="handleSubmit(event)">Send Message →</button>
+          <p class="form-note">We respond to every inquiry within one business day.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div><div class="footer-brand"><svg width="13" height="24" viewBox="0 0 120 280" fill="white" opacity="0.7"><use href="#ct"/></svg>Cypress Point</div><div class="footer-tagline">Find it. Buy it. Build it.</div><p class="footer-note">Industrial real estate development advisory for distributors expanding into new markets.</p></div>
+      <div><div class="footer-col-head">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('company')">Our Company</a></li><li><a onclick="showPage('development')">Commercial Development</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div><div class="footer-col-head">Contact</div><ul class="footer-links"><li><a>Munroe Best</a></li><li><a>munroe@cypresspoint.com</a></li><li><a>(000) 000-0000</a></li></ul></div>
+      <div></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© 2025 Cypress Point</span><span class="footer-copy">Industrial Real Estate Development Advisory</span></div>
+  </footer>
+
+</div><!-- /contact -->
+
+<script src="script.js"></script>
+</body>
 </html>
