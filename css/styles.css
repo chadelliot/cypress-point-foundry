@@ -158,8 +158,8 @@ nav{
   background:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80') center/cover no-repeat;
 }
 .hero-bg::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(160deg,rgba(30,58,47,0.82) 0%,rgba(30,58,47,0.9) 55%,rgba(20,20,16,0.96) 100%);
+  content:'';position:absolute;inset:0;  
+  background: linear-gradient(160deg, #2e2e2ed1, #1b1c1de6 55%, #0b0b08f5);
 }
 .hero-inner{
   position:relative;z-index:1;flex:1;
