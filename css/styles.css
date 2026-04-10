@@ -169,8 +169,8 @@ nav{
 }
 .hero-headline{
   font-family:var(--font-display);
-  font-size:clamp(52px,9vw,100px);
-  font-weight:200;line-height:0.92;
+  font-size:clamp(52px,9vw,85px);
+  font-weight:600;line-height:0.92;
   color:var(--white);letter-spacing:-0.025em;
   margin-bottom:28px;
 }
