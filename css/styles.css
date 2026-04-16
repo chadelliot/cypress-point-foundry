@@ -111,11 +111,11 @@ nav.scrolled {
 /* ── HERO ── */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
+    height: 83vh;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
 }
 .hero-video-wrap {
   position: absolute;
