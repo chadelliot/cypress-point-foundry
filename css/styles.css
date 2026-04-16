@@ -111,7 +111,7 @@ nav.scrolled {
 /* ── HERO ── */
 .hero {
   position: relative;
-    height: 83vh;
+    height: 75vh;
     min-height: 400px;
     display: flex;
     align-items: flex-end;
