@@ -909,3 +909,19 @@ footer {
   .market-item:nth-last-child(1) { border-bottom: none; }
   .market-item:nth-last-child(2) { border-bottom: 1px solid var(--border); }
 }
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
