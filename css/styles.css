@@ -82,9 +82,9 @@ nav.scrolled {
 }
 .nav-links a {
   font-size: 13.5px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--charcoal);
+  font-weight: 900;
+  letter-spacing: .02em;
+  color: #fff;
   text-decoration: none;
   opacity: 0.75;
   transition: opacity 0.2s;
