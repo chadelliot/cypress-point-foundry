@@ -29,13 +29,13 @@
       padding-top: 0;
     }
     nav.scrolled .brand-logo {
-      height: 75px;
+      height: 75px !important;
     }
     nav.scrolled .brand-logo-light { display: none; }
     nav.scrolled .brand-logo-dark { display: block; }
     .hero {
       height: 82vh;
-      min-height: 620px;
+      min-height: 675px;
     }
     .hero-content {
       padding: 0 48px 40px !important;
@@ -55,10 +55,10 @@
       }
       .brand-logo { height: 88px; }
       .nav-logo { padding-top: 15px; }
-      nav.scrolled .brand-logo { height: 58px; }
+      nav.scrolled .brand-logo { height: 58px !important; }
       nav.scrolled .nav-logo { padding-top: 0; }
       .hero {
-        min-height: 560px;
+        min-height: 675px;
       }
       .hero-content {
         padding: 0 24px 64px !important;
@@ -189,8 +189,8 @@
         <div class="stat-label">Years in industrial distribution</div>
       </div>
       <div class="stat-item reveal reveal-delay-1">
-        <div class="stat-value">Built-to-Suit</div>
-        <div class="stat-label">Solutions tailored to operational need</div>
+        <div class="stat-value">Flexible</div>
+        <div class="stat-label">Facility sizing based on operational need</div>
       </div>
       <div class="stat-item reveal reveal-delay-2">
         <div class="stat-value">SE</div>
@@ -208,7 +208,7 @@
     <div class="section-inner">
       <div class="serve-layout">
         <div class="serve-img-wrap reveal">
-          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=900&q=80" alt="Industrial distribution facility interior" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80" alt="Industrial outdoor storage facility with yard space and warehouse access" loading="lazy">
           <div class="serve-img-badge">
             <strong>IOS</strong>
             <span>Industrial Outdoor Storage</span>
@@ -284,7 +284,7 @@
           <p class="reveal reveal-delay-1">Not just where we happen to have a license. Every market we work in is one we know from the ground up — the broker relationships, the municipality timelines, the industrial land dynamics, and the tenant landscape.</p>
           <p class="reveal reveal-delay-2">That market intelligence compounds across projects. Clients benefit from pattern recognition built over decades — making site decisions faster and with higher confidence.</p>
           <div style="margin-top:36px;" class="reveal reveal-delay-3">
-            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" alt="Southeast US industrial development" loading="lazy" style="width:100%;border-radius:3px;display:block;">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Industrial outdoor storage yard with warehouse and exterior material storage" loading="lazy" style="width:100%;border-radius:3px;display:block;">
           </div>
         </div>
       </div>
@@ -305,9 +305,10 @@
         <div class="about-right">
           <div class="section-kicker reveal">Our Company</div>
           <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:28px;">One principal.<br><em>One focus.</em></h2>
-          <p class="reveal reveal-delay-2">Munroe has over 30 years of experience in the construction products and building materials industry across family-owned, private equity-backed, and publicly traded companies. He is recognized for his expertise in industrial distribution, turnarounds, and acquisition integration.</p>
-          <p class="reveal reveal-delay-2">Most recently, Munroe served as President of the South Division at Beacon Building Products, where he led a $3.0B revenue division with more than 2,100 employees and played a key role on the Executive Committee. During his tenure, Beacon grew from roughly $400M to more than $9.8B in revenue through acquisitions and organic growth.</p>
-          <p class="reveal reveal-delay-3">He has been directly involved in integrating acquisitions totaling more than $600M in value, turning around underperforming geographies, and helping execute major strategic initiatives that contributed to significant shareholder value creation and the eventual $11B sale of Beacon to QXO in 2025.</p>
+          <p class="reveal reveal-delay-2">Munroe Best has over 30 years’ experience in the construction products and building materials industry in family-owned, private equity backed and publicly traded companies. He is considered an expert in industrial distribution, turnarounds and acquisition integration.</p>
+          <p class="reveal reveal-delay-2">Most recently, Best was the President of the South Division at Beacon Building Products, the $9.8 billion distributor of roofing and building materials with over 550 facilities across the U.S. and Canada. In that role, he led the $3.0B revenue and 2,100 employee South Division and served on Beacon’s Executive Committee, as well as its IT and Disclosure Committees.</p>
+          <p class="reveal reveal-delay-3">Since joining Beacon following the acquisition of his family business, Best Distributing, in 2000, Munroe held progressively senior roles during a period of tremendous growth. During his tenure, Beacon moved from private equity ownership to a publicly traded company and grew revenue from $400 million to over $9.8 billion through acquisitions and organic growth initiatives.</p>
+          <p class="reveal reveal-delay-3">He was an integral part of pre- and post-acquisition integration involving more than $600 million in businesses, led the turnaround of several struggling geographies, and helped roll out Beacon’s “Ambition 25” strategic plan, which contributed to significant shareholder value creation and the eventual $11 billion sale of the company to QXO in 2025.</p>
           <div class="differentiators reveal">
             <div class="diff-item">
               <h4><span class="diff-dot"></span>Industrial distribution expertise</h4>
@@ -462,5 +463,31 @@
       <span>Find it. Buy it. Build it.</span>
     </div>
   </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    const nav = document.getElementById('main-nav');
+    const reveals = document.querySelectorAll('.reveal');
+
+    function handleScroll() {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach((el) => observer.observe(el));
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+  </script>
 </body>
 </html>
