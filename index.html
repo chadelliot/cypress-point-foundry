@@ -12,10 +12,14 @@
   <style>
     .brand-logo {
       display: block;
-      height: 42px;
+      height: 125px;
       width: auto;
+      transition: height 0.28s ease;
     }
     .brand-logo-dark { display: none; }
+    nav.scrolled .brand-logo {
+      height: 75px;
+    }
     nav.scrolled .brand-logo-light { display: none; }
     nav.scrolled .brand-logo-dark { display: block; }
     .footer-brand-logo {
@@ -26,7 +30,8 @@
       margin-bottom: 16px;
     }
     @media (max-width: 640px) {
-      .brand-logo { height: 36px; }
+      .brand-logo { height: 88px; }
+      nav.scrolled .brand-logo { height: 58px; }
       .footer-brand-logo { height: 44px; }
     }
   </style>
