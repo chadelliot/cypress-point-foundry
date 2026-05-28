@@ -16,7 +16,14 @@
       width: auto;
       transition: height 0.28s ease;
     }
+    .nav-logo {
+      padding-top: 15px;
+      transition: padding-top 0.28s ease;
+    }
     .brand-logo-dark { display: none; }
+    nav.scrolled .nav-logo {
+      padding-top: 0;
+    }
     nav.scrolled .brand-logo {
       height: 75px;
     }
@@ -31,7 +38,9 @@
     }
     @media (max-width: 640px) {
       .brand-logo { height: 88px; }
+      .nav-logo { padding-top: 15px; }
       nav.scrolled .brand-logo { height: 58px; }
+      nav.scrolled .nav-logo { padding-top: 0; }
       .footer-brand-logo { height: 44px; }
     }
   </style>
@@ -41,8 +50,8 @@
   <!-- NAV -->
   <nav id="main-nav">
     <a href="#home" class="nav-logo" aria-label="Cypress Point home">
-      <img src="assets/cypress_point_solutions_logo_white.svg" alt="Cypress Point Solutions" class="brand-logo brand-logo-light">
-      <img src="assets/cypress_point_solutions_logo.svg" alt="Cypress Point Solutions" class="brand-logo brand-logo-dark">
+      <img src="assets/cypress-point-logo-white.svg" alt="Cypress Point Solutions" class="brand-logo brand-logo-light">
+      <img src="assets/cypress-point-logo.svg" alt="Cypress Point Solutions" class="brand-logo brand-logo-dark">
     </a>
     <ul class="nav-links">
       <li><a href="#process">What We Do</a></li>
@@ -273,21 +282,21 @@
         <div class="about-right">
           <div class="section-kicker reveal">Our Company</div>
           <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:28px;">One principal.<br><em>One focus.</em></h2>
-          <p class="reveal reveal-delay-2">Munroe has spent <strong>30 years working at the intersection of industrial real estate and distribution operations</strong>. Before founding Cypress Point, he led the southern division of one of the nation's largest building materials distributors — managing hundreds of branch locations across multiple states, navigating every variation of industrial facility the market had to offer.</p>
-          <p class="reveal reveal-delay-2">That experience made one thing clear: distributors expanding into new markets are chronically underserved by generalist brokers who don't understand the specific requirements of distribution facilities.</p>
-          <p class="reveal reveal-delay-3">When you talk about eave heights, column spacing, rack layout, and yard efficiency — real estate teams lean in. That's the difference Cypress Point brings to every engagement.</p>
+          <p class="reveal reveal-delay-2">Munroe has over 30 years of experience in the construction products and building materials industry across family-owned, private equity-backed, and publicly traded companies. He is recognized for his expertise in industrial distribution, turnarounds, and acquisition integration.</p>
+          <p class="reveal reveal-delay-2">Most recently, Munroe served as President of the South Division at Beacon Building Products, where he led a $3.0B revenue division with more than 2,100 employees and played a key role on the Executive Committee. During his tenure, Beacon grew from roughly $400M to more than $9.8B in revenue through acquisitions and organic growth.</p>
+          <p class="reveal reveal-delay-3">He has been directly involved in integrating acquisitions totaling more than $600M in value, turning around underperforming geographies, and helping execute major strategic initiatives that contributed to significant shareholder value creation and the eventual $11B sale of Beacon to QXO in 2025.</p>
           <div class="differentiators reveal">
             <div class="diff-item">
-              <h4><span class="diff-dot"></span>Specialized knowledge</h4>
-              <p>Only industrial distributors. Faster site qualification, fewer false starts, better outcomes.</p>
+              <h4><span class="diff-dot"></span>Industrial distribution expertise</h4>
+              <p>Deep operating knowledge across branch networks, industrial facilities, acquisitions, and growth strategy.</p>
             </div>
             <div class="diff-item">
-              <h4><span class="diff-dot"></span>Aligned incentives</h4>
-              <p>Advisory fees structured around project outcomes — not transaction volume.</p>
+              <h4><span class="diff-dot"></span>Turnaround leadership</h4>
+              <p>Experience diagnosing operational issues and building plans that improve performance across sales, margin, OPEX, and talent.</p>
             </div>
             <div class="diff-item">
-              <h4><span class="diff-dot"></span>Senior access</h4>
-              <p>Every client works directly with Munroe. The principal is in the room, always.</p>
+              <h4><span class="diff-dot"></span>Executive credibility</h4>
+              <p>Former divisional president and executive committee member with a track record in public-company scale, integration, and long-term value creation.</p>
             </div>
           </div>
         </div>
@@ -394,7 +403,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="assets/cypress_point_solutions_logo_white.svg" alt="Cypress Point Solutions" class="footer-brand-logo">
+        <img src="assets/cypress-point-logo-white.svg" alt="Cypress Point Solutions" class="footer-brand-logo">
         <p>Industrial real estate development advisory for distributors expanding into new markets. Based in the Southeast, active across the Mid-Atlantic and Midwest.</p>
       </div>
       <div class="footer-col">
