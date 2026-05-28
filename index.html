@@ -10,6 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
+    #main-nav {
+      height: 120px;
+      min-height: 120px;
+    }
     .brand-logo {
       display: block;
       height: 125px;
@@ -29,6 +33,14 @@
     }
     nav.scrolled .brand-logo-light { display: none; }
     nav.scrolled .brand-logo-dark { display: block; }
+    .hero {
+      height: 82vh;
+      min-height: 620px;
+    }
+    .hero-content {
+      padding: 0 48px 40px !important;
+      margin-top: 70px;
+    }
     .footer-brand-logo {
       display: block;
       height: 52px;
@@ -37,10 +49,21 @@
       margin-bottom: 16px;
     }
     @media (max-width: 640px) {
+      #main-nav {
+        height: 120px;
+        min-height: 120px;
+      }
       .brand-logo { height: 88px; }
       .nav-logo { padding-top: 15px; }
       nav.scrolled .brand-logo { height: 58px; }
       nav.scrolled .nav-logo { padding-top: 0; }
+      .hero {
+        min-height: 560px;
+      }
+      .hero-content {
+        padding: 0 24px 64px !important;
+        margin-top: 78px;
+      }
       .footer-brand-logo { height: 44px; }
     }
   </style>
