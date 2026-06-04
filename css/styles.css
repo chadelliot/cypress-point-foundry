@@ -1,11 +1,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green: #739488;
-  --green-mid: #739488;
-  --green-light: #8aa79c;
-  --green-pale: #e7efec;
-  --green-dim: #5f7f74;
+  --green: #4b665c;
+  --green-mid: #4b665c;
+  --green-light: #6f8a80;
+  --green-pale: #e3ebe8;
+  --green-dim: #3f564d;
   --cream: #F7F5F0;
   --cream-dark: #EDE9E2;
   --charcoal: #1A1A18;
@@ -155,7 +155,7 @@ nav.scrolled .nav-links a {
 }
 .hero-headline {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(56px, 9vw, 120px);
+  font-size: clamp(56px, 9vw, 70px);
   line-height: 0.92;
   font-weight: 500;
   letter-spacing: -0.04em;
@@ -497,7 +497,7 @@ h2.section-title em {
   border-radius: 999px;
 }
 .badge-primary {
-  background: rgba(115,148,136,0.12);
+  background: rgba(75,102,92,0.12);
   color: var(--green-dim);
 }
 .badge-extended {
