@@ -328,29 +328,7 @@ h2.section-title em {
   font-size: 14.5px;
   color: var(--text-muted);
   line-height: 1.7;
-  margin-bottom: 28px;
-}
-.process-card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.process-card ul li {
-  font-size: 13px;
-  color: var(--text-muted);
-  padding-left: 14px;
-  position: relative;
-}
-.process-card ul li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--green);
-  opacity: 0.5;
+  margin-bottom: 0;
 }
 .process-card:hover { background: #fafaf8; }
 
@@ -468,41 +446,44 @@ h2.section-title em {
   gap: 100px;
   align-items: start;
 }
-.markets-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid var(--border);
-  border-left: 1px solid var(--border);
+.territory-map-wrap {
+  padding: 8px 0 0;
 }
-.market-item {
-  padding: 22px 22px;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255,255,255,0.55);
+.territory-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 460px;
+  overflow: visible;
 }
-.market-name {
-  font-size: 14px;
-  color: var(--charcoal);
+.map-state {
+  fill: var(--green);
+  fill-opacity: 0.13;
+  stroke: var(--green);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  transition: fill-opacity 0.3s ease;
 }
-.market-badge {
-  font-size: 10px;
+.territory-map:hover .map-state { fill-opacity: 0.09; }
+.territory-map .map-state:hover { fill-opacity: 0.32; }
+.map-label {
+  fill: var(--green-dim);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 6px 8px;
-  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-anchor: middle;
+  pointer-events: none;
 }
-.badge-primary {
-  background: rgba(75,102,92,0.12);
-  color: var(--green-dim);
-}
-.badge-extended {
-  background: rgba(26,26,24,0.08);
+.territory-map-note {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
+  max-width: 460px;
 }
 .territory-right h3 {
   font-family: 'Playfair Display', serif;
@@ -852,10 +833,7 @@ footer {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
-  .markets-list { grid-template-columns: 1fr; }
-  .market-item { border-right: none; }
-  .market-item:nth-last-child(1) { border-bottom: none; }
-  .market-item:nth-last-child(2) { border-bottom: 1px solid var(--border); }
+  .territory-map, .territory-map-note { max-width: 100%; }
 }
 
 .reveal {
