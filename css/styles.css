@@ -851,3 +851,71 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── LIVE OVERRIDES ──────────────────────────────────────────────
+   These were previously an inline <style> block in index.html.
+   Vite hoists the bundled stylesheet link to the end of <head>, so
+   in the production build this file loaded *after* that block and
+   silently beat every non-!important rule in it (notably
+   .hero-content margin-top and .hero min-height). Keeping them here,
+   last in the single stylesheet, makes dev and prod behave the same.
+   The :root colour block was dropped: it duplicated the values above.
+─────────────────────────────────────────────────────────────────── */
+#main-nav {
+  height: 120px;
+  min-height: 120px;
+}
+.brand-logo {
+  display: block;
+  height: 100px;
+  width: auto;
+  transition: height 0.28s ease;
+}
+.nav-logo {
+  padding-top: 15px;
+  transition: padding-top 0.28s ease;
+}
+.brand-logo-dark { display: none; }
+nav.scrolled .nav-logo { padding-top: 0; }
+nav.scrolled .brand-logo { height: 75px; }
+nav.scrolled .brand-logo-light { display: none; }
+nav.scrolled .brand-logo-dark { display: block; }
+
+/* height:auto + min-height lets the hero grow instead of letting
+   bottom-aligned content overflow upward under the fixed nav. */
+.hero {
+  height: auto;
+  min-height: max(90vh, 675px);
+  padding: 20px 24px;
+}
+.hero-content {
+  padding: 0 48px 40px;
+  margin-top: 150px;
+}
+.hero-headline { font-size: clamp(56px, 9vw, 70px); }
+section { padding: 100px 24px; }
+
+.cpp-word {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-variation-settings: 'wght' 900;
+}
+.footer-brand-logo {
+  display: block;
+  height: 52px;
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+  #main-nav { height: 120px; min-height: 120px; }
+  .brand-logo { height: 88px; }
+  .nav-logo { padding-top: 15px; }
+  nav.scrolled .brand-logo { height: 58px; }
+  nav.scrolled .nav-logo { padding-top: 0; }
+  .hero { min-height: max(90vh, 675px); padding: 20px 24px; }
+  .hero-content { padding: 0 24px 64px; margin-top: 150px; }
+  section { padding: 100px 24px; }
+  .footer-brand-logo { height: 44px; }
+}
